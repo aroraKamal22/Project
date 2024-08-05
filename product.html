@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta charset="utf-8" />
+    <title>Product</title>
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assests/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+
+    <style>
+
+
+.product-card {
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.product-card img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+.product-card h5 {
+    margin-top: 10px;
+}
+.product-card .rating {
+    margin-top: 5px;
+    font-size: 1.2em;
+}
+.product-card .rating .stars {
+    color: #FFD700; 
+}
+.product-card .rating .rating-text {
+    color: #000;
+    font-size: 0.9em;
+    margin-left: 5px;
+}
+.product-card .price {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.product-card .original-price {
+    text-decoration: line-through;
+    color: #888;
+    margin-left: 10px;
+}
+.product-card .discount {
+    color: #f00;
+    margin-left: 10px;
+    background: rgba(255, 51, 51, 0.1);
+    padding: 5px 10px;
+    font-size: 15px;
+    border-radius: 10px;
+}
+.product-card .btn {
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 50px;
+}
+.view-all-btn {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+.view-all-btn .btn {
+    border-radius: 50px;
+    border: 2px solid #eaeaea;
+    background-color: #fff;
+    color: #000;
+    padding: 15px 60px;
+}
+.hidden {
+    display: none;
+}
+
+
+
+
+        .footers{
+            overflow: hidden;
+        }
+
+    </style>
+
+</head>
+<body>
+
+
+
+
+  <div class="container navbar d-flex justify-content-between align-items-center">
+        <div class="logo-container">
+            <img src="assests/images/logo.png" alt="Vastra Bazar Logo" class="logo">
+        </div>
+        <div class="search-box">
+            <i class='bx bx-search'></i>
+            <input type="text" class="inner-box" placeholder="Search for products...">
+        </div>
+        <div class="nav-opt">
+            <span>Contact Us</span>
+        </div>
+    </div>
+
+<hr>
+
+
+ <div class="container mt-3">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Men</li>
+            <li class="breadcrumb-item active" aria-current="page">T-Shirts</li>
+        </ol>
+    </nav>
+</div>
+
+
+
+
+
+<div class="container mt-5">
+    <div class="row product-container">
+        <div class="col-md-2">
+            <div class="thumbnail-container">
+                <img onclick="changeImage('path_to_image1.jpg')" src="assests/images/tshirt1.png" class="thumbnail-img img-fluid mb-2 active" alt="T-shirt 1">
+                <img onclick="changeImage('path_to_image2.jpg')" src="assests/images/tshirt2.png" class="thumbnail-img img-fluid mb-2" alt="T-shirt 2">
+                <img onclick="changeImage('path_to_image3.jpg')" src="assests/images/tshirt3.png" class="thumbnail-img img-fluid" alt="T-shirt 3">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="main-image">
+                <img id="mainImage" src="assests/images/tshirt4.png" class="img-fluid" alt="Main T-shirt">
+            </div>
+        </div>
+        <div class="col-md-6 product-details">
+            <h2>One Life Graphic T-Shirt</h2>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i> 4.5/5
+            </div>
+            <h3 class="price">$260 <span class="original-price">$300</span> <span class="discount">-40%</span></h3>
+            <p>This graphic t-shirt is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.</p>
+            <div>
+                <h5>Available Colors</h5>
+                <span class="color-dot active" style="background-color: #6A5D4D;">
+                    <i class="fas fa-check"></i>
+                </span>
+                <span class="color-dot" style="background-color: #000;"></span>
+                <span class="color-dot" style="background-color: #1E90FF;"></span>
+            </div>
+            <div>
+                <h5>Available Size</h5>
+                <button class="btn btn-outline-dark">Small</button>
+                <button class="btn btn-outline-dark">Medium</button>
+                <button class="btn btn-outline-dark">Large</button>
+                <button class="btn btn-outline-dark">X-Large</button>
+            </div>
+            <button class="btn btn-dark mt-3 contact-order-btn">Contact Us for Order</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="container mt-5">
+    <div class="card">
+      <div class="card-header">
+        <h3>Product Details</h3>
+      </div>
+      <div class="card-body">
+        <h2 class="card-title">OLIMP Nutrition Creatine Monohydrate Creapure - 500 Grams</h2>
+        <p class="card-text">OLIMP CREATINE MONOHYDRATE CREAPURE is a micronised form of creatine which has better solubility and better tissue absorptiveness than the traditional monohydrate. Creatine molecule is the basic energy vehicle in muscle cells, as a phosphate stores high-energy phosphoric acid groups (phosphate radicals) and distributes them for protein synthesis and muscle fibre contractions. Diet supplementation with OLIMP CREATINE MONOHYDRATE results in: - rapid re-synthesis of ATP (direct energy source) - substantial increase in strength and lean muscle mass - anti-catabolic effects - increased energy saturation of the body.</p>
+        <p class="card-text">Only for adults, especially strength and endurance athletes.</p>
+        
+        <h2 class="card-title">Additional description</h2>
+        <p class="card-text">Creatine certainly has the potential to enhance muscular development. Purchasing the right creatine supplement may be able to ensure those interested in achieving their physique improvement goals can do so. Creapure Monohydrate might be one of the best products on the market since it offers a high efficiency in which the body can absorb helpful creatine. The solubility and tissue absorption capabilities of this product are among the best consumers will find on the market. For that reason alone, investing in this supplement is strongly recommended.</p>
+        <p class="card-text">Creatine molecules offer a tremendous source of energy for the muscle cells. Among the reasons for this would be the fact creatine helps phosphate radicals be removed from storage and distributed through the muscle cells allowing for maximum strength, recovery, and muscle building gains.</p>
+        <p class="card-text">When you take a serving of Creapure Monohydrate, you can feel confident all these benefits will be maximized. A mere 5 grams serving size is capable of delivering these much sought after results. One single container offers a full 100 servings further ensuring the investment made on this particular supplement would be a good one.</p>
+        <p class="card-text">The zero amount of calories, protein, and carbohydrates certainly prevents this supplement from contributing to fat gain although using it may contribute to increased weight.</p>
+        <p class="card-text">Used as directed. The supplement can be used on off days as well as during regularly scheduled workout sessions.</p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+<div class="container">
+    <h2 class="text-center my-4">YOU MIGHT ALSO LIKE THIS</h2>
+    <div class="row top-selling-container">
+        <div class="col-md-3">
+            <div class="product-card">
+                <img src="assests/images/tshirt.png">
+                <h5>T-shirt with Tape Details</h5>
+                <div class="rating">
+                    <span class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </span>
+                    <span class="rating-text">4.5/5</span>
+                </div>
+                <div class="price">$120</div>
+                <button class="btn btn-dark">View Details</button>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="product-card">
+                <img src="assests/images/jeans.png">
+                <h5>Skinny Fit Jeans</h5>
+                <div class="rating">
+                    <span class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </span>
+                    <span class="rating-text">3.5/5</span>
+                </div>
+                <div class="price">$240 <span class="original-price">$260</span> <span class="discount">-20%</span></div>
+                <button class="btn btn-dark">View Details</button>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="product-card">
+                <img src="assests/images/shirt.png">
+                <h5>Checkered Shirt</h5>
+                <div class="rating">
+                    <span class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </span>
+                    <span class="rating-text">4.5/5</span>
+                </div>
+                <div class="price">$180</div>
+                <button class="btn btn-dark">View Details</button>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="product-card">
+                <img src="assests/images/linetshirt.png">
+                <h5>Sleeve Striped T-shirt</h5>
+                <div class="rating">
+                    <span class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </span>
+                    <span class="rating-text">4.5/5</span>
+                </div>
+                <div class="price">$130 <span class="original-price">$160</span> <span class="discount">-30%</span></div>
+                <button class="btn btn-dark">View Details</button>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="product-card">
+                <img src="assests/images/shirt.png">
+                <h5>T-shirt with Tape Details</h5>
+                <div class="rating">
+                    <span class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </span>
+                    <span class="rating-text">4.5/5</span>
+                </div>
+                <div class="price">$120</div>
+                <button class="btn btn-dark">View Details</button>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="product-card">
+                <img src="assests/images/jeans.png">
+                <h5>Skinny Fit Jeans</h5>
+                <div class="rating">
+                    <span class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        
+                    </span>
+                    <span class="rating-text">3.5/5</span>
+                </div>
+                <div class="price">$240 <span class="original-price">$260</span> <span class="discount">-20%</span></div>
+                <button class="btn btn-dark">View Details</button>
+            </div>
+        </div>
+
+    </div>
+    <div class="view-all-btn top-selling-view-all">
+        <button class="btn">View All</button>
+    </div>
+</div>
+
+
+
+
+
+
+ <!-- Only for mobile view    -->
+ <div class="container mt-5">
+    <nav class="navbar navbar-expand-lg navbar-custom">
+      <div class="navbar-nav d-flex justify-content-between flex-row">
+        <a class="nav-item nav-link active text-center" href="index.html"><i class="fas fa-home"></i> <span style="font-size: x-small;">Home</span></a>
+        <a class="nav-item nav-link text-center" href="category.html"><i class="fas fa-th-large"></i><span style="font-size: x-small;"> Category</span> </a>
+        <a class="nav-item nav-link text-center" href="contactUs.html"><i class="fas fa-user-circle"></i> <span style="font-size: x-small;">Contact</span></a>
+        <a class="nav-item nav-link text-center" href="#"><i class="fas fa-bars"></i> <span style="font-size: x-small;"> More</span></a>
+      </div>
+    </nav>
+  </div>
+
+  <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-slideout custom-modal" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="assests/images/logo.png" class="logo">
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <nav class="modal-nav">
+                    <ul>
+                        <li><a href="#link1">About</a></li>
+                        <hr>
+                        <li><a href="#link2">Associate Seller</a></li>
+                        <hr>
+                        <li><a href="contactUs.html">Contact Us</a></li>
+                        <hr>
+                    </ul>
+                </nav>
+            </div>
+            <div class="modal-footer">
+                <div class="social-icons ">
+                    <!-- <a href="https://facebook.com" target="_blank"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class='bx bxl-twitter'></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class='bx bxl-instagram'></i></a> -->
+
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2000-2024 VastralayBazar, All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<footer class="footers">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 my-auto text-left">
+                <h1>VaatralayBazar</h1>
+            </div>
+            <div class="col-md-8 my-auto social-icons text-right">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <hr>
+        <div class="row mt-3">
+            <div class="col-12 text-center">
+                <p>&copy; 2000-2024 VastralayBazar, All Rights Reserved</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    const viewAllButton = document.querySelector('.view-all-btn button');
+    const products = document.querySelectorAll('.top-selling-container .col-md-3');
+
+    // Initially show only the first 4 products
+    products.forEach((product, index) => {
+        if (index >= 4) {
+            product.classList.add('hidden');
+        }
+    });
+
+    viewAllButton.addEventListener('click', function() {
+        const isExpanded = viewAllButton.textContent.includes('Close');
+        
+        products.forEach((product, index) => {
+            if (index >= 4) {
+                product.classList.toggle('hidden');
+            }
+        });
+        
+        if (isExpanded) {
+            viewAllButton.textContent = 'View All';
+        } else {
+            viewAllButton.textContent = 'Close';
+        }
+    });
+});
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="assests/js/script.js"></script>
+</body>
+
+</html>
